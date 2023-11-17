@@ -17,6 +17,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "owenvoke/blade-fontawesome": "^2.4",
+        "phpoffice/phpword": "^1.1",
         "troccoli/blade-health-icons": "^2.0"
     },
     "require-dev": {

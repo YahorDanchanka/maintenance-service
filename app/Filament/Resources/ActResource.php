@@ -6,6 +6,7 @@ use App\Filament\Resources\ActResource\Pages;
 use App\Filament\Resources\ActResource\RelationManagers;
 use App\Models\Act;
 use App\Models\Expert;
+use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -69,7 +70,14 @@ class ActResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([Tables\Actions\EditAction::make()])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                \Filament\Tables\Actions\Action::make('print')
+                    ->label(false)
+                    ->url(fn($record): string => route('acts.print', $record))
+                    ->icon('fas-print')
+                    ->openUrlInNewTab(),
+            ])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
     }
 
