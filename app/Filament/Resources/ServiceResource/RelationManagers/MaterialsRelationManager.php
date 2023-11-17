@@ -65,7 +65,6 @@ class MaterialsRelationManager extends RelationManager
                     return $record;
                 }),
                 Tables\Actions\DetachAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
