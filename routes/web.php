@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActController;
+use App\Http\Controllers\InspectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,8 @@ use App\Http\Controllers\ActController;
 |
 */
 
-Route::get('/acts/{act}', [ActController::class, 'print'])->name('acts.print');
+Route::get('/acts/{act}/print', [ActController::class, 'print'])->name('acts.print');
+Route::get('/inspections/{inspection}/print', [InspectionController::class, 'print'])->name('inspections.print');
 
 Route::get('/', function () {
     return view('welcome');

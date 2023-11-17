@@ -56,7 +56,14 @@ class InspectionResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([Tables\Actions\EditAction::make()])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                \Filament\Tables\Actions\Action::make('print')
+                    ->label(false)
+                    ->url(fn($record): string => route('inspections.print', $record))
+                    ->icon('fas-print')
+                    ->openUrlInNewTab(),
+            ])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
     }
 
