@@ -49,7 +49,7 @@ class MaterialResource extends Resource
                     ->label('Цена за шт.')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('count')
-                    ->label('Количество')
+                    ->label('Количество на складе')
                     ->sortable(),
             ])
             ->filters([

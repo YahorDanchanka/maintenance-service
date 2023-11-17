@@ -24,4 +24,9 @@ class Expert extends Model
     {
         return $this->hasMany(Act::class);
     }
+
+    public function inspections(): HasMany
+    {
+        return $this->hasMany(Inspection::class);
+    }
 }

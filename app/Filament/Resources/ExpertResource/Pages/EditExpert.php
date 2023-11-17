@@ -15,7 +15,7 @@ class EditExpert extends EditRecord
     {
         return [
             Actions\DeleteAction::make()->before(function (Actions\DeleteAction $action) {
-                if ($this->record->acts()->exists()) {
+                if ($this->record->acts()->exists() || $this->record->inspections()->exists()) {
                     Notification::make()
                         ->warning()
                         ->title('Запись задействована в других таблицах')
