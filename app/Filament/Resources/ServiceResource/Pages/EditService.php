@@ -15,7 +15,7 @@ class EditService extends EditRecord
     {
         return [
             Actions\DeleteAction::make()->before(function (Actions\DeleteAction $action) {
-                if ($this->record->materials()->exists()) {
+                if ($this->record->materials()->exists() || $this->record->acts()->exists()) {
                     Notification::make()
                         ->warning()
                         ->title('Запись задействована в других таблицах')
